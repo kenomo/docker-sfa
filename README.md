@@ -3,7 +3,7 @@
 In a nutshell: brings the [NIST SFA](https://github.com/usnistgov/SFA) into a docker container.
 
 ## 🌟 Usage
-- Get container `ghcr.io/kenomo/docker-sfa/sfa:5.06` from registry.
+- Get container `docker pull ghcr.io/kenomo/docker-sfa:5.06` from registry.
 - Prepare a working folder:
 ```
 ├── data
@@ -15,13 +15,13 @@ In a nutshell: brings the [NIST SFA](https://github.com/usnistgov/SFA) into a do
 STEP_FILE=<file.stp>
 docker run --rm \
     --mount type=bind,source=$(pwd)/data/,target=/root/data \
-    ghcr.io/kenomo/docker-sfa/sfa:5.06 \
+    ghcr.io/kenomo/docker-sfa:5.06 \
     bash -c "wine sfa-cl.exe /root/data/${STEP_FILE} csv noopen /root/data/STEP-File-Analyzer-options.dat"
 ```
 - Artifacts will be in the mounted folder.
 
 ## 🏗 Build
-> Headless build is still WIP.
+> 🚨🚨🚨 Headless build is still WIP 🚨🚨🚨
 
 - Build and run container for post-installation steps:
 ```
@@ -58,4 +58,4 @@ wine regedit /root/ifcsvr.Uninstall.reg
 wine regedit /root/ifcsvr.CLSID.reg
 ```
 
-- Close running shell, stop container, commit container, and push
+- Close running shell, stop container, commit container, and push.
